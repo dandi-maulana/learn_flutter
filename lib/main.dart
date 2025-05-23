@@ -1,35 +1,31 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 main() {
-  runApp(MyApp());
+  runApp(MyWidget());
 }
 
-class MyApp extends StatelessWidget {
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey,
         appBar: AppBar(
-          backgroundColor: Colors.greenAccent,
-          title: Text("My APP"),
+          title: Text("Column", style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
         ),
-        body: Center(
-          child: Text(
-            'The code you provided is good enough and works well to create a simple Flutter app. However, there are some fixes and improvements you can make to follow best practices and add some features.',
-            // maxLines: 2,
-            // overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.right,
-            style: TextStyle(
-              fontSize: 20,
-              backgroundColor: Colors.blue,
-              fontFamily: "Boldyguard",
-              decorationStyle: TextDecorationStyle.wavy,
-              decoration: TextDecoration.underline,
-              decorationColor: Colors.amberAccent,
-            ),
-          ),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Container(width: 30, height: 100, color: Colors.deepOrange),
+            Container(width: 30, height: 50, color: Colors.amberAccent),
+            Container(width: 30, height: 70, color: Colors.purple),
+            Container(width: 30, height: 20, color: Colors.blueAccent),
+          ],
         ),
       ),
     );
