@@ -77,6 +77,14 @@ flutter:
      - family: Boldyguard
        fonts:
          - asset: fonts/Boldyguard.otf
+     - family: Poetsen
+       fonts:
+         - asset: fonts/PoetsenOne-Regular.ttf
+     - family: Roboto
+       fonts:
+         - asset: fonts/Roboto.ttf
+      
+      
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
