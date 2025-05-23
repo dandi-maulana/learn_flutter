@@ -14,53 +14,27 @@ class Myapp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'List Tile',
+            'Image Widget',
             style: TextStyle(
               color: Colors.white,
               fontSize: 30,
               fontFamily: "Poetsen",
-              fontStyle: FontStyle.italic,
             ),
           ),
-          backgroundColor: Colors.green,
+          centerTitle: true,
+          backgroundColor: Colors.purple,
         ),
-        body: ListView(
-          children: [
-            ListTile(
-              title: Text('Dandi Maulana'),
-              subtitle: Text('Hello , My name is Dandi Maulana'),
-              leading: CircleAvatar(),
-              trailing: Text('20:00 AM'),
-            ),
-            Divider(color: Colors.black),
-            ListTile(
-              title: Text('Tyas Adrian'),
-              subtitle: Text('Login...'),
-              leading: CircleAvatar(),
-              trailing: Text('20:40 AM'),
-            ),
-            Divider(color: Colors.black),
-            ListTile(
-              title: Text('Fauzy Maulana'),
-              subtitle: Text('Good Morning..'),
-              leading: CircleAvatar(),
-              trailing: Text('23:00 AM'),
-            ),
-            Divider(color: Colors.black),
-            ListTile(
-              title: Text('Salman Alfariza'),
-              subtitle: Text('Hello'),
-              leading: CircleAvatar(),
-              trailing: Text('21:00 AM'),
-            ),
-            Divider(color: Colors.black),
-            ListTile(
-              title: Text('Febrian Putri'),
-              subtitle: Text('I Love You'),
-              leading: CircleAvatar(),
-              trailing: Text('22:00 AM'),
-            ),
-          ],
+        body: Center(
+          child: Container(
+            width: 350,
+            height: 500,
+            color: Colors.amber,
+            child: Image.asset("assets/images/banka.jpg", fit: BoxFit.cover),
+            // child: Image(
+            //   image: AssetImage('assets/images/banka.jpg'),
+            //   fit: BoxFit.cover,
+            // ),
+          ),
         ),
       ),
     );
