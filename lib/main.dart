@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-main() {
-  runApp(MyWidget());
+void main() {
+  runApp(MyApp());
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class MyApp extends StatelessWidget {
+  MyApp({super.key});
+
+  final List<Color> mycolor = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.purple,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +20,25 @@ class MyWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Column", style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.blue,
+          title: Text(
+            'List View',
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: "Boldyguard",
+              color: Colors.white,
+            ),
+          ),
           centerTitle: true,
+          backgroundColor: Colors.green,
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(width: 30, height: 100, color: Colors.deepOrange),
-            Container(width: 30, height: 50, color: Colors.amberAccent),
-            Container(width: 30, height: 70, color: Colors.purple),
-            Container(width: 30, height: 20, color: Colors.blueAccent),
-          ],
+        body: ListView.separated(
+          separatorBuilder: (context, index) {
+            return Container(height: 10);
+          },
+          itemCount: mycolor.length, // scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return Container(height: 300, color: mycolor[index]);
+          },
         ),
       ),
     );
